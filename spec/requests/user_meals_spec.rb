@@ -13,7 +13,7 @@ RSpec.describe "UserMeals", :type => :request do
 
   # i'll have to make a user and a cuisine
 
-  before(:all) do
+  before(:each) do
     @user = FactoryGirl.create(:user)
     @cuisine = FactoryGirl.create(:cuisine)
     @meals = FactoryGirl.create_list(:meal, 5, user: @user, cuisine: @cuisine)

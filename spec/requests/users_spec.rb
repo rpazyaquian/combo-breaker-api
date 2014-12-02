@@ -15,7 +15,7 @@ RSpec.describe "Users", :type => :request do
 
   # there's no need for an index action
 
-  before(:all) do
+  before(:each) do
     @users = FactoryGirl.create_list(:user, 3)
   end
 
