@@ -1,0 +1,1 @@
+json.(meal, :id, :cuisine, :created_at)

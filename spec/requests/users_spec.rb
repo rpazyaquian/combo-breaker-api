@@ -37,7 +37,7 @@ RSpec.describe "Users", :type => :request do
     it "creates a new user" do
       user = FactoryGirl.attributes_for(:user)
       post users_path, user: user
-      expect(json).to eq user.attributes
+      expect(json["name"]).to eq user[:name]
     end
   end
 
@@ -49,7 +49,7 @@ RSpec.describe "Users", :type => :request do
       user = @users.first
       updated_user = FactoryGirl.attributes_for(:user)
       patch user_path(user.id), updated_user: updated_user
-      expect(json).to eq updated_user.attributes
+      expect(json["name"]).to eq updated_user[:name]
     end
   end
 

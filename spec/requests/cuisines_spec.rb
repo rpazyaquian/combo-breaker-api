@@ -46,7 +46,7 @@ RSpec.describe "Cuisines", :type => :request do
     it "creates a new cuisine" do
       cuisine = FactoryGirl.attributes_for(:cuisine)
       post cuisines_path, cuisine: cuisine
-      expect(json).to eq cuisine.attributes
+      expect(json["name"]).to eq cuisine[:name]
     end
   end
 
