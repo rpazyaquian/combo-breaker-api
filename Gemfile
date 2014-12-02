@@ -10,6 +10,20 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'database_cleaner'
+end
+
+group :development do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
+
+gem 'rack-cors', require: 'rack/cors'
 
 
 # To use ActiveModel has_secure_password
