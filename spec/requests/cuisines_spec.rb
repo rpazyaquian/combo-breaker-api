@@ -16,7 +16,7 @@ RSpec.describe "Cuisines", :type => :request do
   # for a cuisine's singular JSON view?
 
   before(:all) do
-    @cusines = FactoryGirl.create_list(:cuisine, 5)
+    @cuisines = FactoryGirl.create_list(:cuisine, 5)
   end
 
   describe "GET /cuisines" do

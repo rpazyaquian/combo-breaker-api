@@ -25,6 +25,7 @@ end
 
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'arel', '6.0.0.beta2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
