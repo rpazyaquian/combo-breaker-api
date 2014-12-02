@@ -15,7 +15,7 @@ RSpec.describe "Cuisines", :type => :request do
   # what information will be displayed
   # for a cuisine's singular JSON view?
 
-  before(:all) do
+  before(:each) do
     @cuisines = FactoryGirl.create_list(:cuisine, 5)
   end
 
@@ -33,9 +33,8 @@ RSpec.describe "Cuisines", :type => :request do
 
     # READ
 
-    cuisine = @cuisines.first
-
     it "displays information for a cuisine" do
+      cuisine = @cuisines.first
       get cuisine_path(cuisine.id)
       expect(json["id"]).to eq cuisine.id
     end
@@ -44,10 +43,8 @@ RSpec.describe "Cuisines", :type => :request do
   describe "POST /cuisines/" do
 
     # CREATE
-
-    cuisine = FactoryGirl.attributes_for(:cuisine)
-
     it "creates a new cuisine" do
+      cuisine = FactoryGirl.attributes_for(:cuisine)
       post cuisines_path, cuisine: cuisine
       expect(json).to eq cuisine.attributes
     end

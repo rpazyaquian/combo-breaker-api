@@ -33,9 +33,8 @@ RSpec.describe "UserMeals", :type => :request do
 
     # CREATE
 
-    meal = FactoryGirl.attributes_for(:meal, user: @user, cuisine: @cuisine)
-
     it "creates a new meal for a user" do
+      meal = FactoryGirl.attributes_for(:meal, user: @user, cuisine: @cuisine)
       post user_meals_path(@user.id), meal: meal
       expect(json).to eq meal.attributes
     end

@@ -23,9 +23,8 @@ RSpec.describe "Users", :type => :request do
 
     # READ
 
-    user = @users.first
-
     it "displays information for a user" do
+      user = @users.first
       get user_path(user.id)
       expect(json["id"]).to eq user.id
     end
@@ -35,9 +34,8 @@ RSpec.describe "Users", :type => :request do
 
     # CREATE
 
-    user = FactoryGirl.attributes_for(:user)
-
     it "creates a new user" do
+      user = FactoryGirl.attributes_for(:user)
       post users_path, user: user
       expect(json).to eq user.attributes
     end
@@ -47,10 +45,9 @@ RSpec.describe "Users", :type => :request do
 
     # UPDATE
 
-    user = @users.first
-    updated_user = FactoryGirl.attributes_for(:user)
-
     it "updates information for a user" do
+      user = @users.first
+      updated_user = FactoryGirl.attributes_for(:user)
       patch user_path(user.id), updated_user: updated_user
       expect(json).to eq updated_user.attributes
     end
