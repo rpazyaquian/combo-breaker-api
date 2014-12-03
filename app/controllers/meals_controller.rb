@@ -1,11 +1,11 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.find_by(user_id: params[:user_id])
+    @meals = Meal.where(user_id: params[:user_id])
     render
   end
 
   def create
-    @meal = Meal.create(meal_params)
+    @meal = Meal.create(user_id: 1, cuisine_id: 1)
     render
   end
 
