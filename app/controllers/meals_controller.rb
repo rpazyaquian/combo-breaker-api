@@ -5,14 +5,14 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.create(user_id: 1, cuisine_id: 1)
+    @meal = Meal.create(user_id: params[:user_id], cuisine_id: meal_params[:cuisine_id])
     render
   end
 
   private
 
     def meal_params
-      params.require(:meal).permit(:user_id, :cuisine_id)
+      params.require(:meal).permit(:cuisine_id)
     end
 
 end
